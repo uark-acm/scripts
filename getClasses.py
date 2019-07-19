@@ -25,7 +25,7 @@ rows.append(",".join(headerRow))
 for row in table.find_all('tr'):
     dataPoints = []
     for data in row.find_all('td'):
-        dataPoints.append(data.get_text())
+        dataPoints.append(f'"{data.get_text()}"')
     rows.append(",".join(dataPoints))
 
 # make the csv file
